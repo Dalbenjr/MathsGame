@@ -1,0 +1,16 @@
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  background: linear-gradient(135deg, #153677, #4e085f);
+}
+
+.container {
+  background-color: white;
+  border-radius: 10px;
+  width: 500px;
+  height: 400px;
+}
+
+#equation {
+  background-color: rgb(243, 243, 243);
+}
