@@ -15,10 +15,14 @@ $(document).ready(function () {
     $('#score').text(score);
   };
 
-  var highScore = function (score) {
+  var highScore = function () {
     if (score > currentScore) {
       currentScore = score;
       $('#high-score').text(currentScore);
+      $('h4').last().addClass("score-flash").on('animationend', function() {
+        $(this).removeClass("score-flash");
+      });
+    }
     }
   };
 
@@ -33,7 +37,7 @@ $(document).ready(function () {
         if (timeLeft === 0) {
           clearInterval(interval);
           interval = undefined;
-          highScore(score);
+          highScore();
         }
       }, 1000);
     }
@@ -95,7 +99,6 @@ $(document).ready(function () {
       $('#user-input').val('');
       updateTimeLeft(+1);
       updateScore(+1);
-      highScore();
     }
   };
 
